@@ -1,0 +1,9 @@
+/.vscode
+/download.png
+/settings.py
+/urls.py
+/asgi.py
+/manage.py
+/__init__.py
+/wsgi.py
+mywebapp/
