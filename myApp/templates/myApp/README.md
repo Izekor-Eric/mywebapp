@@ -11,9 +11,10 @@ To execute the program: 'mywebapp'
 create a virtual environment.
 type 'python manage.py runserver' on the terminal.
 
-![Program screenshot showing the output](Home.png)
-![Program screenshot showing the output](Add.png)
-![Program screenshot showing the output](View.png)
+# Sample Output:
+![Program screenshot showing the output](Home.PNG)
+![Program screenshot showing the output](Add.PNG)
+![Program screenshot showing the output](View.PNG)
 
 # Useful Websites:
 * [Django reference](https://www.djangoproject.com/)
