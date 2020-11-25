@@ -1,19 +1,121 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css"  href="{% static 'css/main.css' %}">
+  <style>
+    body{
+      background-image: url("{% static 'myApp/images/Viewback.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .toolbar{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 5%;
+        color: #ffffff;
+        text-align: center;
+    }
+    .toolbar-wrapper{
+        margin-top: 0px;
+        display: flex;
+        justify-content: space-between;
+        padding: 38px;
+        background-color: none;
+    }
+    .right-side{
+        display: flex;
+        background-color: transparent;
+    }
+    .left-side{
+        color: black;
+    }
+    
+    .toolbar-wrapper > .right-side > div {
+        margin-right: 20px;
+        font-size: 0.9em;
+    }
+    .link-wrapper{
+        height: 22px;
+    }
+    
+    .link-wrapper a{
+        color: black; 
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    
+    
+    .link-wrapper a:hover{
+        color: red;
+    }
+    h1{
+      text-align: center;
+      margin-top: 0px;
+    }
+    .table-header{
+      color: red;
+    }
+    table{
+      margin-left: 0px;
+    }
+    .display{
+      color: rgb(50, 78, 205);
+    }
+  </style>
   <title>View Movies</title>
 </head>
 <body>
-  <h1>Movies Lists</h1>
-{% for movie in movies%}
-<p>Movie name: {{movie.movie_name}}</p>
-<p>Released Date: {{movie.released_date}}</p>
-<p>Released Country: {{movie.released_country}}</p>
-<p>Movie Type: {{movie.movie_type}}</p>
-<p>Language: {{movie.language}}</p>
-<p>Actors: {{movie.movies_characters}}</p>
-{% endfor %}
+  <div class="toolbar">
+    <div class="toolbar-wrapper">
+        <div class="left-side">
+            <div class="brand-logo">
+                <div>MOVIES REVIEW</div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="link-wrapper">
+                <a href="/">Home</a>
+            </div>
+            <div class="link-wrapper">
+                <a href="{% url 'addMovies' %}">Add Movies</a>
+            </div>
+            <div class="link-wrapper">
+                <a href="{% url 'about' %}">About</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="main-class">
+    <h1>Movies Lists</h1>
+    <table style="width:100%">
+      <tr class="table-header">
+        <td>Movie names</td>
+        <td>Movie Type</td> 
+        <td>Language</td>
+        <td>Released Date</td>
+        <td>Released Country</td>
+        <td>Actors</td>
+      </tr>
+      {% for movie in movies%}
+      <tr class="display">
+        <td>{{movie.movie_name}}</td>
+        <td>{{movie.movie_type}}</td>
+        <td>{{movie.language}}</td>
+        <td>{{movie.released_date}}</td>
+        <td>{{movie.released_country}}</td>
+        <td>{{movie.movies_characters}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </body>
 </html>

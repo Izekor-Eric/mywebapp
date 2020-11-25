@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from myApp.models import Movies
 
+
 # Create your views here.
 
 def home(request):

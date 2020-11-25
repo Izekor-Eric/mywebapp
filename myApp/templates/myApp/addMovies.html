@@ -8,6 +8,7 @@
     <style>
       html, body {
       min-height: 100%;
+      background-color: burlywood;
       }
       body, div, form, input, select, textarea, p { 
       padding: 0;
@@ -18,7 +19,7 @@
       color: #666;
       line-height: 22px;
       }
-      h1 {
+      i {
       position: absolute;
       margin: 0;
       font-size: 38px;
@@ -33,11 +34,11 @@
       padding: 20px;
       }
       form {
-      width: 100%;
+      width: 50%;
       padding: 20px;
       border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 25px 0 #892e9b; 
+      background:black;
+      box-shadow: 0 0 25px 0 #2e859b; 
       }
       .banner {
       position: relative;
@@ -177,14 +178,83 @@
       .city-item select {
       width: calc(50% - 8px);
       }
-      }
+    }
+    .toolbar{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 5%;
+        color: #ffffff;
+        text-align: center;
+    }
+    .toolbar-wrapper{
+        margin-top: 0px;
+        display: flex;
+        justify-content: space-between;
+        padding: 38px;
+        background-color: none;
+    }
+    .right-side{
+        display: flex;
+        background-color: transparent;
+        font-size: 20px;
+    }
+    .left-side{
+        color: green;
+    }
+    
+    .toolbar-wrapper > .right-side > div {
+        margin-right: 20px;
+        font-size: 0.9em;
+    }
+    .link-wrapper{
+        height: 22px;
+    }
+    
+    .link-wrapper a{
+        color: green; 
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    
+    
+    .link-wrapper a:hover{
+        color: red;
+    }
     </style>
   </head>
   <body>
+    <div class="footer">
+      <p> Copyright &copy; Eric Izekor </p>
+    </div>
+      <div class="toolbar">
+          <div class="toolbar-wrapper">
+              <div class="left-side">
+                  <div class="brand-logo">
+                      <div>MOVIES REVIEW</div>
+                  </div>
+              </div>
+              <div class="right-side">
+                  <div class="link-wrapper">
+                      <a href="/">Home</a>
+                  </div>
+                  <div class="link-wrapper">
+                      <a href="{% url 'viewMovies' %}">View Movies</a>
+                  </div>
+                  <div class="link-wrapper">
+                      <a href="{% url 'about' %}">About</a>
+                  </div>
+              </div>
+         </div>
     <div class="testbox">
       <form action="{% url 'add' %}">
         <div class="banner">
-          <h1>Add Movie</h1>
+          <i>Add Movie</i>
         </div>
         <div class="item">
           <p>Released Date</p>
@@ -206,12 +276,12 @@
             <input type="text" name="language"/>
           </div>
             <select name="released_country">
-              <option>Released Country</option>
-              <option>Russia</option>
-              <option>Germany</option>
-              <option>France</option>
-              <option>USA</option>
-              <option>Nigeria</option>
+              <option name="released_country">Released Country</option>
+              <option name="released_country">Russia</option>
+              <option name="released_country">Germany</option>
+              <option name="released_country">France</option>
+              <option name="released_country">USA</option>
+              <option name="released_country">Nigeria</option>
             </select>
         <div class="item">
           <p>Movie Principal Characters</p>
