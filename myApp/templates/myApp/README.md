@@ -7,9 +7,9 @@ This program collects movies recommendations from people and also allow people t
 * Django
 
 # Execution:
-* To execute the program: 'mywebapp'
-* create a virtual environment.
-* type 'python manage.py runserver' on the terminal.
+To execute the program: 'mywebapp'
+create a virtual environment.
+type 'python manage.py runserver' on the terminal.
 
 ![Program screenshot showing the output](Home.png)
 ![Program screenshot showing the output](Add.png)
